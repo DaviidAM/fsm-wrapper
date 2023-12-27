@@ -2,10 +2,16 @@
 FSM State model
 """
 
-from pydantic import Basemodel
-from 
+from pydantic import BaseModel, Field
 
-class StateModel(Basemodel):
+from typing import Callable
+
+from .Links import LinksModel
+
+def default_state_action():
+    print(f"Executing default action for current state")
+
+class StateModel(BaseModel):
     """
     _summary_
 
@@ -13,4 +19,8 @@ class StateModel(Basemodel):
         Basemodel (_type_): _description_
     """
     name: str
-    #action: Callable
+    action: Callable = Field(
+        description="Action to execute in state",
+        default=default_state_action
+        )
+    #links: list[LinksModel]

@@ -2,12 +2,12 @@
 FSM Machine model
 """
 
-from pydantic import Basemodel, Field
+from pydantic import BaseModel, Field
 
 from .State import StateModel
 
 
-class MachineModel(Basemodel):
+class MachineModel(BaseModel):
     """
     _summary_
 

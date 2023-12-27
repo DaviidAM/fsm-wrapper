@@ -1,2 +1,2 @@
-from .Machine import Machine
-from .State import State
+from .Machine import MachineModel
+from .State import StateModel
